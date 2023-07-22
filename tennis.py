@@ -44,16 +44,18 @@ class Match:
     self.best_of_5 = best_of_5
     self.sets_to_play = 5 if best_of_5 else 3
   
-class Set:
+class Set(Unit):
   def __init__(self, match: Match, set_number=0):
+    super().__init__(match.players)
     self.match = match
     self.set_number = set_number
+    self.games = []
 
 class Game(Unit:
   points = 0, 15, 30, 40, "Ad"
   
   def __init__(self, set: Set, game_number=0):
-    super().__init__(set.match.players)
+    super().__init__(set.players)
     self.set = set
     self.game_number = game_number
 
