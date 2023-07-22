@@ -17,3 +17,12 @@ class Match:
     self.best_of_5 = best_of_5
     self.sets_to_play = 5 if best_of_5 else 3
   
+class Set:
+  def __init__(self, match: Match, set_number=0):
+    self.match = match
+    self.set_number = set_number
+
+class Game:
+  def __init__(self, set: Set, game_number=0):
+    self.set = set
+    self.game_number = game_number
