@@ -3,6 +3,9 @@ class Player:
     self.name = name
     self.ranking_points = ranking_points
 
+  def update_ranking_points(self, points_change):
+    self.ranking_points += points_change
+
 class Match:
   def __init__(
     self,
