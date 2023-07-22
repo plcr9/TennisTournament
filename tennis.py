@@ -51,6 +51,23 @@ class Set(Unit):
     self.set_number = set_number
     self.games = []
 
+  def play_game(self):
+    game = Game(self, len(self.games) + 1)
+    self.games.append(game)
+
+    print(
+      f"\nRecord point winner: "
+      f"Press 1 for {self.players[0]} | "
+      f"Press 2 for {self.players[1]} "
+    }
+    while game.is_running():
+      point_winner_idx = (
+        int(input("\nPoint Winner (1 or 2) -> ")) -1
+      )
+      game.score_point(self.players[point_winner_idx])
+      print(game)
+      
+
 class Game(Unit:
   points = 0, 15, 30, 40, "Ad"
   
