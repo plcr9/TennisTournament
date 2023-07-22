@@ -28,3 +28,14 @@ class Game:
   def __init__(self, set: Set, game_number=0):
     self.set = set
     self.game_number = game_number
+    self.players = self.set.match.players
+    self.score = {
+      self.players[0]: 0,
+      self.players[1]: 0,
+    }
+
+  def score_point(self, player: Player):
+    current_point = self.score[player]
+    self.score[player] = Game.points[
+      Game.points.index(current_point) + 1
+    ]
