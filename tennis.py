@@ -119,6 +119,12 @@ class Set(Unit):
         if 5 not in self.score.values():
           self.winner = player
 
+  def play_match(self):
+    while self.is_running():
+      self.play_set()
+    print(f"\nWinner: {self.winner}")
+    print(f"Score: {self}")
+
   def __str__(self):
     return "-".join(
       [str(value) for value in self.score.values()]
