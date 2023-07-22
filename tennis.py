@@ -51,7 +51,13 @@ class Set(Unit):
     self.set_number = set_number
     self.games = []
 
-  def play_game(self):
+  def play_game(self, tiebreak=False):
+    if tiebreak:
+      game = Tiebreak(self, len(self.games) + 1)
+    else:
+      game = Game(self, len(self.games) + 1)
+    self.games.append(game)
+    
     game = Game(self, len(self.games) + 1)
     self.games.append(game)
 
@@ -77,6 +83,8 @@ class Set(Unit):
     ):
       return
     if list(self.score.values()) == [6, 6]:
+      self.play_game(tiebreak=True)
+      return
     for player in self.players:
       if self.score[player] == 7:
         self.winner = player
