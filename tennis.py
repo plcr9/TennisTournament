@@ -49,18 +49,13 @@ class Set:
     self.match = match
     self.set_number = set_number
 
-class Game:
+class Game(Unit:
   points = 0, 15, 30, 40, "Ad"
   
   def __init__(self, set: Set, game_number=0):
+    super().__init__(set.match.players)
     self.set = set
     self.game_number = game_number
-    self.players = self.set.match.players
-    self.score = {
-      self.players[0]: 0,
-      self.players[1]: 0,
-    }
-    self.winner = None
 
   def score_point(self, player: Player):
     if self.winner:
