@@ -33,6 +33,7 @@ class Game:
       self.players[0]: 0,
       self.players[1]: 0,
     }
+    self.winner = None
 
   def score_point(self, player: Player):
     current_point = self.score[player]
