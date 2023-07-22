@@ -9,6 +9,12 @@ class Player:
   def __str__(self):
     return self.name
 
+  def __repr__(self):
+    return (
+      f"Player(name='{self.name}',"
+      f"ranking_points={self.ranking_points})"
+    )
+
 class Match:
   def __init__(
     self,
@@ -71,3 +77,9 @@ class Game:
   def __str__(self):
     score_values = list(self.score.values())
     return f"{score_values[0]} - {score_values[1]}"
+
+  def __repr__(self):
+    return (
+      f"Game(set={self.set!r}, "
+      f"game_number={self.game_number})"
+    )
