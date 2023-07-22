@@ -90,7 +90,7 @@ class Set(Unit):
       f"\nRecord point winner: "
       f"Press 1 for {self.players[0]} | "
       f"Press 2 for {self.players[1]} "
-    }
+    )
     while game.is_running():
       point_winner_idx = (
         int(input("\nPoint Winner (1 or 2) -> ")) -1
