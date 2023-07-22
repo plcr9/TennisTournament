@@ -40,7 +40,7 @@ class Match(Unit):
     player_2=Player(),
     best_of_5=True,
   ):
-    super().__init__(players=(player_1, player_2)
+    super().__init__(players=(player_1, player_2))
     self.players = (player_1, player_2)
     self.best_of_5 = best_of_5
     self.sets_to_play = 5 if best_of_5 else 3
@@ -65,7 +65,7 @@ class Match(Unit):
     return (
       f"Match("
       f"player_1={self.players[0]}, "
-      f"player_2={self.players[1]), "
+      f"player_2={self.players[1]}, "
       f"best_of_5={self.best_of_5})"
     )
   
