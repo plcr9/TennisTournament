@@ -68,7 +68,7 @@ class Set(Unit):
       print(game)
       
 
-class Game(Unit:
+class Game(Unit):
   points = 0, 15, 30, 40, "Ad"
   
   def __init__(self, set: Set, game_number=0):
