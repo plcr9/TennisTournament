@@ -57,6 +57,17 @@ class Match(Unit):
 
     if self.score[set_winner] == self.sets_to_play // 2 + 1:
       self.winner = set_winner
+
+  def __str__(self):
+    return " ".join([str(set) for set in self.sets])
+
+  def __repr__(self):
+    return (
+      f"Match("
+      f"player_1={self.players[0]}, "
+      f"player_2={self.players[1]), "
+      f"best_of_5={self.best_of_5})"
+    )
   
 class Set(Unit):
   def __init__(self, match: Match, set_number=0):
@@ -89,7 +100,7 @@ class Set(Unit):
 
     self.score[game.winner] += 1
     print(f"\nGame: {game.winner.name}")
-    print(f"\nCurrent Score: {self}")
+    print(f"\nCurrent Score: {self.match}")
 
     if (
       6 not in self.score.values()
