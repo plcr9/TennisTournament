@@ -201,10 +201,3 @@ class Tiebreak(Game):
       and self.score[player] - min(self.score.values()) >= 2
     ):
       self.winner = player
-
-
-
-
-
-
-  
