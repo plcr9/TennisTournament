@@ -23,6 +23,8 @@ class Set:
     self.set_number = set_number
 
 class Game:
+  points = 0, 15, 30, 40, "Ad"
+  
   def __init__(self, set: Set, game_number=0):
     self.set = set
     self.game_number = game_number
