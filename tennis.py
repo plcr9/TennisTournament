@@ -193,7 +193,7 @@ class Tiebreak(Game):
       print (
         "Error: You tried to add a point to a completed game!"
       )
-      return=
+      return
 
     self.score[player] += 1
     if (
