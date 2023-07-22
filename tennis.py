@@ -6,6 +6,9 @@ class Player:
   def update_ranking_points(self, points_change):
     self.ranking_points += points_change
 
+  def __str__(self):
+    return self.name
+
 class Match:
   def __init__(
     self,
@@ -64,3 +67,7 @@ class Game:
     if game_won:
       self.score[player] = "Game"
       self.winner = player
+
+  def __str__(self):
+    score_values = list(self.score.values())
+    return f"{score_values[0]} - {score_values[1]}"
