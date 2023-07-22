@@ -70,7 +70,17 @@ class Set(Unit):
     self.score[game.winner] += 1
     print(f"\nGame: {game.winner.name}")
     print(f"\nCurrent Score: {self}")
-      
+
+  def __str__(self):
+    return "-".join(
+      [str(value) for value in self.score.values()]
+    )
+
+  def __repr__(self):
+    return (
+      f"Set (match={self.match!r}, "
+      f"set_number={self.set_number})"
+    )
 
 class Game(Unit):
   points = 0, 15, 30, 40, "Ad"
