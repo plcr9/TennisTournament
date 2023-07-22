@@ -33,16 +33,30 @@ class Unit:
   def is_running(self):
     return self.winner == None
 
-class Match:
+class Match(Unit):
   def __init__(
     self,
     player_1=Player(),
     player_2=Player(),
     best_of_5=True,
   ):
+    super().__init__(players=(player_1, player_2)
     self.players = (player_1, player_2)
     self.best_of_5 = best_of_5
     self.sets_to_play = 5 if best_of_5 else 3
+    self.sets = []
+
+  def play_set(self):
+    set = Set(self, len(self.sets) + 1)
+    self.sets.append(set)
+
+    while set.is_running():
+      set.play_game()
+    set_winner = set.get_winner()
+    self.score[set_winner] += 1
+
+    if self.score[set_winner] == self.sets_to_play // 2 + 1:
+      self.winner = set_winner
   
 class Set(Unit):
   def __init__(self, match: Match, set_number=0):
