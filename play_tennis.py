@@ -1,6 +1,6 @@
 from tennis import Player, Match
 
-#based on post-Wimbledon 2023 rankings (as of Monday 17th July 2023)
+'''based on post-Wimbledon 2023 rankings (as of Monday 17th July 2023)'''
 alcaraz = Player("Carlos Alcaraz", 9675)
 djokovic = Player("Novak Djokovic", 8795)
 medvedev = Player("Daniil Medvedev", 6520)
