@@ -144,3 +144,28 @@ class Game(Unit):
       f"Game(set={self.set!r}, "
       f"game_number={self.game_number})"
     )
+
+class Tiebreak(Game):
+  def __init__(self, set: Set, game_number=0):
+    super().__init__(set, game_number)
+
+  def score_point(self, player: Player):
+    if self.winner:
+      print (
+        "Error: You tried to add a point to a completed game!"
+      )
+      return=
+
+    self.score[player] += 1
+    if (
+      self.score[player] >= 7
+      and self.score[player] - min(self.score.values()) >= 2
+    ):
+      self.winner = player
+
+
+
+
+
+
+  
